@@ -7,106 +7,20 @@
 		<title>Cruxe Extension</title>
 		<script type="text/javascript" src="data.js"></script>
 
-		<script type="text/javascript" src="sketch.js"></script>
+		<script type="text/javascript" src="sketch.js" defer></script>
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="style.css" />
-		<style>
-			.field-title {
-				position: absolute;
-				top: -10px;
-				left: 8px;
-				transform: translateY(-50%);
-				font-weight: 800;
-				color: rgba(255, 255, 255, 0.5);
-				text-transform: uppercase;
-				font-size: 0.65rem;
-				pointer-events: none;
-				user-select: none;
-			}
-
-			.range__slider {
-				position: relative;
-				width: 95%;
-				left: 10px;
-				height: calc(65px - 10px);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background: rgba(255, 255, 255, 0.08);
-				border-radius: 8px;
-				margin: 30px 0;
-			}
-			.range__slider::before,
-			.range__slider::after {
-				position: absolute;
-				color: #fff;
-				font-size: 0.9rem;
-				font-weight: bold;
-			}
-			.range__slider::before {
-				content: attr(data-min);
-				left: 10px;
-			}
-			.range__slider::after {
-				content: attr(data-max);
-				right: 10px;
-			}
-			.range__slider .length__title::after {
-				content: attr(data-length);
-				position: absolute;
-				padding-left: 5px;
-				font-variant-numeric: tabular-nums;
-				color: #fff;
-			}
-
-			#slider {
-				-webkit-appearance: none;
-				width: calc(100% - (100px));
-				height: 2px;
-				border-radius: 5px;
-				background: rgba(255, 255, 255, 0.314);
-				outline: none;
-				padding: 0;
-				margin: 0;
-				cursor: pointer;
-			}
-			#slider::-webkit-slider-thumb {
-				-webkit-appearance: none;
-				width: 18px;
-				height: 18px;
-				border-radius: 50%;
-				background: white;
-				cursor: pointer;
-				transition: all 0.15s ease-in-out;
-			}
-			#slider::-webkit-slider-thumb:hover {
-				background: #d4d4d4;
-				transform: scale(1.2);
-			}
-			#slider::-moz-range-thumb {
-				width: 20px;
-				height: 20px;
-				border: 0;
-				border-radius: 50%;
-				background: white;
-				cursor: pointer;
-				transition: background 0.15s ease-in-out;
-			}
-			#slider::-moz-range-thumb:hover {
-				background: #d4d4d4;
-			}
-		</style>
 	</head>
 	<body>
 		<div class="extension-container">
 			<div class="cruxe-container flex-center">
 				<h2>Cruxe</h2>
 			</div>
-			<div class="title-container flex-center-vertical">
+			<div class="title-container flex-center">
 				<h2>Heading</h2>
 			</div>
 
@@ -120,72 +34,15 @@
 						required
 						class="text-field"
 					></textarea>
-
-					<div class="length range__slider" data-min="75" data-max="500">
-						<div class="length__title field-title" data-length="0">
-							Words in Summary :
-						</div>
-						<input id="slider" type="range" min="75" max="500" value="125" step="25" />
-					</div>
-					<div iclass="range-container">
-						<!-- <div class="range-container">
-							<p>Words in summary :</p>
-							<input
-								type="range"
-								value="75"
-								min="75"
-								max="500"
-								id="number"
-								step="25"
-								style="display: inline"
-							/>
-						</div> -->
-						<input
-							type="submit"
-							id="submit-btn"
-							value="Cruxefy"
-							required
-							style="display: inline"
-						/>
-					</div>
 				</form>
 			</div>
+			<div class="length range__slider" data-min="75" data-max="500">
+				<div class="length__title field-title" data-length="0">Words in Summary :</div>
+				<input id="slider" type="range" min="75" max="500" value="125" step="25" />
+			</div>
 
-			<div class="summery-container" id="display"></div>
+			<div class="summery-container text-field" id="display"></div>
+			<button class="btn" id="submit-btn">Cruxefy</button>
 		</div>
-		<script>
-			// Range Slider Properties.
-			// Fill : The trailing color that you see when you drag the slider.
-			// background : Default Range Slider Background
-			const sliderProps = {
-				fill: '#0B1EDF',
-				background: 'rgba(255, 255, 255, 0.214)',
-			};
-
-			// Selecting the Range Slider container which will effect the LENGTH property of the password.
-			const slider = document.querySelector('.range__slider');
-
-			// Text which will show the value of the range slider.
-			const sliderValue = document.querySelector('.length__title');
-
-			// Using Event Listener to apply the fill and also change the value of the text.
-			slider.querySelector('input').addEventListener('input', event => {
-				sliderValue.setAttribute('data-length', event.target.value);
-				applyFill(event.target);
-			});
-			// Selecting the range input and passing it in the applyFill func.
-			applyFill(slider.querySelector('input'));
-			// This function is responsible to create the trailing color and setting the fill.
-			function applyFill(slider) {
-				console.log(slider.value);
-				console.log(slider.min);
-				const percentage = (100 * (slider.value - slider.min)) / (slider.max - slider.min);
-				const bg = `linear-gradient(90deg, ${sliderProps.fill} ${percentage}%, ${
-					sliderProps.background
-				} ${percentage + 0.1}%)`;
-				slider.style.background = bg;
-				sliderValue.setAttribute('data-length', slider.value);
-			}
-		</script>
 	</body>
 </html>
