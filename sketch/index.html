@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>maze_challenge</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cruxe Extension</title>
 		<script type="text/javascript" src="data.js"></script>
 
 		<script type="text/javascript" src="sketch.js"></script>
@@ -11,55 +13,52 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
 			rel="stylesheet"
 		/>
-	<link rel="stylesheet" href="style.css">
-		</style>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div class="cruxe-container flex-center">
-      <h2>Cruxe</h2>
-    </div>
-		<div class="title-container flex-center-vertical  ">
-      <h2>Cruxe</h2>
-    </div>
+		<div class="extension-container">
+			<div class="cruxe-container flex-center">
+				<h2>Cruxe</h2>
+			</div>
+			<div class="title-container flex-center-vertical">
+				<h2>Heading</h2>
+			</div>
 
-		<div class="form-wrapper">
-			<form action="" id="myform">
-				<textarea
-				spellcheck=""
-					id="form-data"
-					maxlength="5000"
-					placeholder="Copy or Enter your text here "
-					required
-					class="text-field"
-				></textarea>
-				<div class="flex">
-					<div class="range-container">
-						<p>Words in summary :</p>
+			<div class="form-wrapper">
+				<form action="" id="myform">
+					<textarea
+						spellcheck=""
+						id="form-data"
+						maxlength="5000"
+						placeholder="Copy or Enter your text here "
+						required
+						class="text-field"
+					></textarea>
+					<div iclass="range-container">
+						<div class="range-container">
+							<p>Words in summary :</p>
+							<input
+								type="range"
+								value="50"
+								min="25"
+								max="150"
+								id="number"
+								step="25"
+								style="display: inline"
+							/>
+						</div>
 						<input
-							type="range"
-							value="50"
-							min="25"
-							max="150"
-							id="number"
-							step="25"
+							type="submit"
+							id="submit-btn"
+							value="Cruxefy"
+							required
 							style="display: inline"
 						/>
 					</div>
+				</form>
+			</div>
 
-					<input
-						type="submit"
-						id="submit-btn"
-						value="Cruxefy"
-						required
-						style="display: inline"
-					/>
-				</div>
-			</form>
+			<div class="summery-container" id="display"></div>
 		</div>
-
-		<div class="summery-container" id="display">
-			
-		</div>
-	
-  	</body>
+	</body>
 </html>
