@@ -43,8 +43,11 @@ function setup() {
 
 	let bgpage = chrome.extension.getBackgroundPage();
 	let word = bgpage.word;
+	// let heading = bgpage.heading;
 	let para = document.getElementById('form-data');
+	// let h1tag = document.querySelector('.title-container');
 	para.value = word;
+	// h1tag.value = heading;
 
 	//console.log(word)
 
@@ -54,11 +57,10 @@ function setup() {
 	// });
 
 	btn.addEventListener('click', e => {
-		console.log('working');
 		if (document.getElementById('display').innerText) {
 			document.getElementById('display').innerHTML = '';
 		}
-		console.log('75');
+		document.getElementById('display').innerHTML = `<p>Loading....</p>`;
 		getsummary();
 	});
 	async function getsummary() {
@@ -83,7 +85,7 @@ function setup() {
 			let summary = await response.json();
 			console.log(summary);
 			document.getElementById('display').innerHTML = `
-				<p id="dynamic-text"> summary: ${summary} </p>`;
+				<b> Summary</b>:  ${summary} `;
 		}
 	}
 }
