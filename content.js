@@ -2,7 +2,7 @@
 let para = document.getElementsByTagName('p');
 let heading = document.getElementsByTagName('h1');
 // console.log(para);
-let selectedHeading = heading[0].innerText;
+// let selectedHeading = heading[0].innerText;
 
 console.log(heading[0].innerText);
 let selectedText = '';

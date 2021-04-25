@@ -1,7 +1,7 @@
-console.log('raja');
 // Range Slider Properties.
 // Fill : The trailing color that you see when you drag the slider.
 // background : Default Range Slider Background
+
 const sliderProps = {
 	fill: '#0B1EDF',
 	background: 'rgba(255, 255, 255, 0.214)',
@@ -14,13 +14,14 @@ const slider = document.querySelector('.range__slider');
 const sliderValue = document.querySelector('.length__title');
 
 // Using Event Listener to apply the fill and also change the value of the text.
-slider.querySelector('input').addEventListener('input', event => {
-	let number = event.target.value;
-	console.log(number);
+const input = slider.querySelector('input');
+input.addEventListener('input', event => {
+	const number = event.target.value;
+	input.setAttribute('value', number);
 	sliderValue.setAttribute('data-length', event.target.value);
 	applyFill(event.target);
 });
-console.log(slider.querySelector('input').value);
+// console.log(number);
 
 // Selecting the range input and passing it in the applyFill func.
 applyFill(slider.querySelector('input'));
@@ -39,16 +40,14 @@ const number = document.getElementById('number');
 const formdata = document.getElementById('form-data');
 const btn = document.getElementById('submit-btn');
 
-let bgpage = chrome.extension.getBackgroundPage();
-console.log(bgpage);
-let { word, heading } = bgpage;
-console.log(word);
-console.log(heading);
-let para = document.getElementById('form-data');
-para.value = word;
-let h1tag = document.getElementById('heading');
-h1tag.innerHTML = heading;
+// let bgpage = chrome.extension.getBackgroundPage();
+// let { word, heading } = bgpage;
+// let para = document.getElementById('form-data');
+// para.value = word;
+// let h1tag = document.getElementById('heading');
+// h1tag.innerHTML = heading;
 btn.addEventListener('click', e => {
+	console.log('working');
 	if (document.getElementById('display').innerText) {
 		document.getElementById('display').innerHTML = '';
 	}
@@ -68,7 +67,7 @@ async function getsummary() {
 		crossDomain: true,
 		body: JSON.stringify({
 			text: formdata.value,
-			number: 150,
+			number: input.value,
 		}),
 	});
 	if (!response.ok) {
