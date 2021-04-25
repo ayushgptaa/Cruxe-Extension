@@ -1,8 +1,10 @@
 // Content Script is the code that executes after the web page is loaded
 let para = document.getElementsByTagName('p');
-// let heading = document.getElementsByTagName('h1');
+let heading = document.getElementsByTagName('h1');
 // console.log(para);
-// console.log(heading[0].innerText);
+let selectedHeading = heading[0].innerText;
+
+console.log(heading[0].innerText);
 let selectedText = '';
 for (var i = 1; i < para.length - 1; i++) {
 	selectedText += para[i].innerText;
@@ -10,6 +12,7 @@ for (var i = 1; i < para.length - 1; i++) {
 
 let mes = {
 	text: selectedText,
+	heading: selectedHeading,
 };
 chrome.runtime.sendMessage(mes);
 
@@ -22,6 +25,7 @@ function wordSelected() {
 	if (selectedText.length > 0) {
 		let message = {
 			text: selectedText,
+			heading: selectedHeading,
 		};
 		chrome.runtime.sendMessage(message);
 	}

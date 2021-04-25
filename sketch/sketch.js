@@ -40,20 +40,14 @@ const formdata = document.getElementById('form-data');
 const btn = document.getElementById('submit-btn');
 
 let bgpage = chrome.extension.getBackgroundPage();
-let word = bgpage.word;
-// let heading = bgpage.heading;
+console.log(bgpage);
+let { word, heading } = bgpage;
+console.log(word);
+console.log(heading);
 let para = document.getElementById('form-data');
-// let h1tag = document.querySelector('.title-container');
 para.value = word;
-// h1tag.value = heading;
-
-//console.log(word)
-
-// number.addEventListener('input', event => {
-// 	let value = event.target.value;
-// 	// document.getElementById('current-value').innerText = word;
-// });
-
+let h1tag = document.getElementById('heading');
+h1tag.innerHTML = heading;
 btn.addEventListener('click', e => {
 	if (document.getElementById('display').innerText) {
 		document.getElementById('display').innerHTML = '';
@@ -86,8 +80,3 @@ async function getsummary() {
 				<b> Summary</b>:  ${summary} `;
 	}
 }
-
-// const btn = document.getElementById('submit-btna');
-
-// btn.addEventListener('click', e => {
-// 	console.log('working');
