@@ -1,8 +1,6 @@
 console.log('background running');
-
 chrome.runtime.onMessage.addListener(receiver);
-
-window.word = 'selectedText';
+window.word = 'madarchod';
 // window.heading = 'Your heading';
 
 function receiver(request, sender, sendResponse) {
