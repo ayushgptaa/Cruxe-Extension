@@ -40,12 +40,13 @@ const number = document.getElementById('number');
 const formdata = document.getElementById('form-data');
 const btn = document.getElementById('submit-btn');
 
-// let bgpage = chrome.extension.getBackgroundPage();
-// let { word, heading } = bgpage;
-// let para = document.getElementById('form-data');
-// para.value = word;
-// let h1tag = document.getElementById('heading');
-// h1tag.innerHTML = heading;
+let bgpage = chrome.extension.getBackgroundPage();
+let { word, heading } = bgpage;
+let para = document.getElementById('form-data');
+para.value = word;
+let h1tag = document.getElementById('heading');
+h1tag.innerHTML = heading;
+
 btn.addEventListener('click', e => {
 	console.log('working');
 	if (document.getElementById('display').innerText) {
