@@ -48,11 +48,10 @@ let h1tag = document.getElementById('heading');
 h1tag.innerHTML = heading;
 
 btn.addEventListener('click', e => {
+	// document.getElementById('summary').innerHTML = '';
 	console.log('working');
-	if (document.getElementById('display').innerText) {
-		document.getElementById('display').innerHTML = '';
-	}
-	document.getElementById('display').innerHTML = `<p>Loading....</p>`;
+	document.querySelector('.summary-text').style.display = 'none';
+	document.querySelector('.loader-container').style.visibility = 'visible';
 	getsummary();
 });
 async function getsummary() {
@@ -75,8 +74,8 @@ async function getsummary() {
 		console.log('error');
 	} else {
 		let summary = await response.json();
-		console.log(summary);
+		document.querySelector('.loader-container').style.display = 'block';
 		document.getElementById('display').innerHTML = `
-				<b> Summary</b>:  ${summary} `;
+				<div class="summary"> <b> Summary</b>:  ${summary} </div> `;
 	}
 }
