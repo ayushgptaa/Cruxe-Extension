@@ -43,6 +43,7 @@ body {
 }
 
 .extension-container {
+	position: relative;
 	height: 100%;
 	width: 100%;
 	background: var(--primary-color);
@@ -226,8 +227,16 @@ body {
 }
 .copyText {
 	position: absolute;
-	right: 1rem;
-	top: 63%;
+	right: 1.2rem;
+	top: 63.5%;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.fa-copy {
+	font-size: 1rem;
+	color: white;
+	opacity: 0.6;
 }
 .summery-container p {
 	text-align: center;
@@ -254,6 +263,7 @@ body {
 .summary {
 	word-spacing: 0px;
 	padding-top: 15px;
+	letter-spacing: none;
 }
 
 @-webkit-keyframes rotator {
