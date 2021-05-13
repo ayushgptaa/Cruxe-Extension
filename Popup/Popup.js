@@ -1,7 +1,6 @@
 // Range Slider Properties.
 // Fill : The trailing color that you see when you drag the slider.
 // background : Default Range Slider Background
-
 const sliderProps = {
 	fill: '#0B1EDF',
 	background: 'rgba(255, 255, 255, 0.214)',
@@ -21,7 +20,6 @@ input.addEventListener('input', event => {
 	sliderValue.setAttribute('data-length', event.target.value);
 	applyFill(event.target);
 });
-// console.log(number);
 
 // Selecting the range input and passing it in the applyFill func.
 applyFill(slider.querySelector('input'));
@@ -56,7 +54,7 @@ btn.addEventListener('click', e => {
 		let url = 'http://65.0.21.159:8080/summaryextension';
 		const body = {
 			text: formdata.value,
-			number: 75,
+			number: input.value,
 		};
 		console.log(JSON.stringify(body));
 		try {
@@ -73,8 +71,7 @@ btn.addEventListener('click', e => {
 			document.getElementById('display').innerHTML = `
 							<div class="summary"> <b> Summary</b>:  ${summary} </div> `;
 		} catch (err) {
-			console.log('error 😭');
-			console.error('err', err);
+			console.error('err 😭', err);
 		}
 	};
 	getsummary();
