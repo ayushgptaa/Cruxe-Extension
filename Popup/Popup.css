@@ -32,7 +32,7 @@
 /* Main css */
 html,
 body {
-	height: 600px;
+	height: 580px;
 	width: 340px;
 	overflow: hidden;
 	box-shadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
@@ -91,7 +91,7 @@ body {
 	width: 100%;
 	height: 10rem;
 	color: white;
-	font-size: 0.9rem;
+	font-size: 0.85rem;
 	text-align: justify;
 }
 .text-field:focus {
@@ -222,6 +222,12 @@ body {
 .summery-container {
 	width: 95%;
 	text-align: justify;
+	overflow: auto;
+}
+.copyText {
+	position: absolute;
+	right: 1rem;
+	top: 63%;
 }
 .summery-container p {
 	text-align: center;
@@ -244,6 +250,10 @@ body {
 .spinner {
 	-webkit-animation: rotator 1.4s linear infinite;
 	animation: rotator 1.4s linear infinite;
+}
+.summary {
+	word-spacing: 0px;
+	padding-top: 15px;
 }
 
 @-webkit-keyframes rotator {

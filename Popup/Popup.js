@@ -69,10 +69,21 @@ btn.addEventListener('click', e => {
 			const summary = await res.text();
 			document.querySelector('.loader-container').style.display = 'block';
 			document.getElementById('display').innerHTML = `
-							<div class="summary"> <b> Summary</b>:  ${summary} </div> `;
+							<div class="summary"> <b> Summary</b> :  ${summary} </div> `;
 		} catch (err) {
 			console.error('err 😭', err);
 		}
 	};
 	getsummary();
+});
+
+document.querySelector('.copyText').addEventListener('click', () => {
+	var copyText = document.createElement('input');
+	copyText.style.opacity = 0;
+	copyText.value = document.querySelector('.summary').innerText;
+	document.body.appendChild(copyText);
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+	document.execCommand('copy');
+	console.log(copyText.value);
 });
