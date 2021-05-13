@@ -48,34 +48,34 @@ let h1tag = document.getElementById('heading');
 h1tag.innerHTML = heading;
 
 btn.addEventListener('click', e => {
-	// document.getElementById('summary').innerHTML = '';
 	console.log('working');
 	document.querySelector('.summary-text').style.display = 'none';
 	document.querySelector('.loader-container').style.visibility = 'visible';
+	const getsummary = async () => {
+		console.log('getsummary');
+		let url = 'http://65.0.21.159:8080/summaryextension';
+		const body = {
+			text: formdata.value,
+			number: 75,
+		};
+		console.log(JSON.stringify(body));
+		try {
+			const res = await fetch(url, {
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				method: 'POST',
+				body: JSON.stringify(body),
+			});
+			console.log(res);
+			const summary = await res.text();
+			document.querySelector('.loader-container').style.display = 'block';
+			document.getElementById('display').innerHTML = `
+							<div class="summary"> <b> Summary</b>:  ${summary} </div> `;
+		} catch (err) {
+			console.log('error 😭');
+			console.error('err', err);
+		}
+	};
 	getsummary();
 });
-async function getsummary() {
-	let url = 'http://15.206.90.205/predict';
-	let response = await fetch(url, {
-		headers: {
-			'Access-Control-Allow-Origin': '*',
-			'Access-Control-Allow-Credentials': 'true',
-			Accept: 'application/json',
-			'Content-Type': 'application/json',
-		},
-		method: 'POST',
-		crossDomain: true,
-		body: JSON.stringify({
-			text: formdata.value,
-			number: input.value,
-		}),
-	});
-	if (!response.ok) {
-		console.log('error');
-	} else {
-		let summary = await response.json();
-		document.querySelector('.loader-container').style.display = 'block';
-		document.getElementById('display').innerHTML = `
-				<div class="summary"> <b> Summary</b>:  ${summary} </div> `;
-	}
-}
