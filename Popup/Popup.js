@@ -69,7 +69,7 @@ btn.addEventListener('click', e => {
 			const summary = await res.text();
 			document.querySelector('.loader-container').style.display = 'block';
 			document.getElementById('display').innerHTML = `
-							<div class="summary"> <b> Summary</b> :  ${summary} </div> `;
+							<div class="summary"> ${summary} </div> `;
 		} catch (err) {
 			console.error('err 😭', err);
 		}
