@@ -1,22 +1,22 @@
 {
-  "manifest_version": 2,
-  "name": "Cruxe",
-  "description": "A extension to summarize an Article",
-  "version": "1.0.0",
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "permissions": ["*://*/*"],
-  "browser_action": {
-    "default_icon": "icon48.png",
-    "default_popup": "Popup/Popup.html",
-    "default_title": "Cruxe- Summerize your text using AI"
-  },
-  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" }
+	"manifest_version": 2,
+	"name": "Cruxe",
+	"description": "A extension to summarize an Article",
+	"version": "1.0.0",
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"]
+		}
+	],
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": ["*://*/*"],
+	"browser_action": {
+		"default_icon": "icon48.png",
+		"default_popup": "Popup/Popup.html",
+		"default_title": "Cruxe- Summerize your text using AI"
+	},
+	"icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" }
 }
