@@ -46,8 +46,8 @@ let h1tag = document.getElementById('heading');
 h1tag.innerHTML = heading;
 
 btn.addEventListener('click', e => {
-	console.log('working');
 	document.querySelector('.summary-text').style.display = 'none';
+	document.querySelector('.summary').innerHTML = '';
 	document.querySelector('.loader-container').style.visibility = 'visible';
 	const getsummary = async () => {
 		console.log('getsummary');
@@ -67,9 +67,9 @@ btn.addEventListener('click', e => {
 			});
 			console.log(res);
 			const summary = await res.text();
-			document.querySelector('.loader-container').style.display = 'block';
-			document.getElementById('display').innerHTML = `
-							<div class="summary"> ${summary} </div> `;
+			document.querySelector('.loader-container').style.visibility = 'hidden';
+			document.querySelector('.summary').innerHTML = `
+							${summary} `;
 		} catch (err) {
 			console.error('err 😭', err);
 		}

@@ -223,6 +223,7 @@ body {
 .summery-container {
 	width: 95%;
 	text-align: justify;
+	height: 10rem;
 	overflow: auto;
 }
 .copyText {
@@ -251,11 +252,11 @@ body {
 .loader-container {
 	height: 100%;
 	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: grid;
+	place-items: center;
 	visibility: hidden;
 }
+
 .spinner {
 	-webkit-animation: rotator 1.4s linear infinite;
 	animation: rotator 1.4s linear infinite;
