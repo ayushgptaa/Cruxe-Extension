@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Cruxe",
-	"description": "A extension to summarize an Article",
+	"description": "A extension to summarize a Webpage or an Article",
 	"version": "1.0.0",
 	"content_scripts": [
 		{
@@ -14,7 +14,7 @@
 	},
 	"permissions": ["*://*/*"],
 	"browser_action": {
-		"default_icon": "icon48.png",
+		"default_icon": "./images/icon48.png",
 		"default_popup": "Popup/Popup.html",
 		"default_title": "Cruxe- Summerize your text using AI"
 	},

@@ -83,7 +83,6 @@ document.querySelector('.copyText').addEventListener('click', () => {
 	copyText.value = document.querySelector('.summary').innerText;
 	document.body.appendChild(copyText);
 	copyText.select();
-	copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 	document.execCommand('copy');
 	console.log(copyText.value);
 });
