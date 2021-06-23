@@ -1,22 +1,15 @@
 ## CruXe Extension (WebExtension)
 
-TExt Summarization extension for chrome
+Text Summarization extension for chrome
 
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-green.svg?style=flat-square)](https://chrome.google.com/webstore/detail/search-anime-by-screensho/gkamnldpllcbiidlfacaccdoadedncfp)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-green.svg?style=flat-square)](https://chrome.google.com/webstore/detail/cruxe-summarise-text-usin/fbflpifoodcfknnolhnambbiekfjekmb?utm_source=chrome-ntp-icon)
 
 
+You can use this extension to summarize articles on a web page
 
 
-Use anime screenshots to search where this scene is taken from.
-
-It tells you which anime, which episode, and exactly which moment this scene appears in Japanese Anime.
-
-## Demo
-
-Demo image
-
-![](https://images.plurk.com/2FKxneXP64qiKwjlUA7sKj.jpg)
+![Cruxe-Extension](https://images.plurk.com/2FKxneXP64qiKwjlUA7sKj.jpg)
 
 Just right click on any Anime Screenshot to search
 
