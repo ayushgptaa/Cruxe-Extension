@@ -20,6 +20,7 @@ You can use this extension to summarize articles on a web page
 
 -   Some times text is not selected when tab is changed
 -   Text summarization takes a lot of time .
+-   Ui needs to be improved 
 
 ## Where to download ⚡
 * Via Chrome: https://chrome.google.com/webstore/detail/cruxe-summarise-text-usin/fbflpifoodcfknnolhnambbiekfjekmb?utm_source=chrome-ntp-icon
