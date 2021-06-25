@@ -27,3 +27,5 @@ You can use this extension to summarize articles on a web page
 * <a href='https://chrome.google.com/webstore/detail/cruxe-summarise-text-usin/fbflpifoodcfknnolhnambbiekfjekmb?utm_source=chrome-ntp-icon' target='_blank' > Via chrome</a>
 * <a href='https://addons.mozilla.org/en-US/firefox/addon/cruxe-summarise-text-using-ai/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search' target='_blank' > Via Firefox</a>
 * Via Package: Download the repo into a folder. Then go into Chrome's extension settings, and click the "add package" prompt. Then find the folder and add it. 
+
+<a href='https://codepen.io/dev_loop/pen/vYYxvbz'> Color theme and UI Inspired by </a>
