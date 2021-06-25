@@ -51,7 +51,7 @@ btn.addEventListener('click', e => {
 	document.querySelector('.loader-container').style.visibility = 'visible';
 	const getsummary = async () => {
 		console.log('getsummary');
-		let url = 'http://65.0.21.159:8080/summaryextension';
+		let url = '';
 		const body = {
 			text: formdata.value,
 			number: input.value,

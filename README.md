@@ -9,7 +9,9 @@ You can use this extension to summarize articles on a web page
 ![Cruxe-Extension](images/extension.png)
 
 <br/>
-<h2 > How it works 👇 </h2>
+
+## How it works 👇
+ 
 <br/>
 
 ![Cruxe-Extension](images/howitworks.gif)
